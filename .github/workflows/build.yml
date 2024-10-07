@@ -16,6 +16,7 @@ env:
   INPUT_RELEASE_VERSION: ${{ github.event.inputs.release-version || github.ref_name }}
   POSTGRESQL_VERSION: 16.4.0
   PQ_LIB_STATIC: 1
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   build-windows-binaries:
     strategy:
