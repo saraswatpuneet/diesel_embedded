@@ -23,11 +23,12 @@ jobs:
     name: Build ${{ matrix.target }}
     runs-on: windows-2022
     steps:
+      - run: echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
       - name: Vcpkg install
         shell: powershell
         run: |
           vcpkg integrate install
-          vcpkg install openssl:x64-windows         
+          vcpkg install openssl:x64-windows
       - uses: actions/checkout@v4
       - name: Install Node.js
         uses: actions/setup-node@v4
