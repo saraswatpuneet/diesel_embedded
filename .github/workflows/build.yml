@@ -15,6 +15,7 @@ on:
 env:
   INPUT_RELEASE_VERSION: ${{ github.event.inputs.release-version || github.ref_name }}
   POSTGRESQL_VERSION: 16.4.0
+  PQ_LIB_STATIC: 1
 jobs:
   build-windows-binaries:
     strategy:
@@ -28,7 +29,7 @@ jobs:
         shell: powershell
         run: |
           vcpkg integrate install
-          vcpkg install openssl:x64-windows-static-md
+          vcpkg install openssl:x64-windows-static
       - uses: actions/checkout@v4
       - name: Install Node.js
         uses: actions/setup-node@v4
