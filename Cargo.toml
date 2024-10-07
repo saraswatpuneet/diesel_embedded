@@ -19,5 +19,6 @@ openssl-sys = { version = "0.9.93", features = ["vendored"] }
 
 [features]
 bundled = [
-    'pq-sys/bundled'
+    'pq-sys/bundled',
+    'postgresql_embedded/bundled',
 ]
