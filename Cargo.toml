@@ -7,7 +7,7 @@ version = '0.1.0'
 [dependencies]
 diesel = { version = "2.2.4", features = ["postgres", "r2d2"] }
 diesel_migrations = "2.2.0"
-postgresql_embedded = { version = "0.16.3", default-features = false, features = ["theseus", "bundled"] }
+postgresql_embedded = { version = "0.16.3", default-features = false, features = ["theseus"] }
 postgresql_extensions = "0.16.3"
 postgresql_archive = "0.16.3"
 pq-sys ={ version = "0.6.3", features = ["bundled"] }
@@ -20,5 +20,4 @@ openssl-sys = { version = "0.9.93", features = ["vendored"] }
 [features]
 bundled = [
     'pq-sys/bundled',
-    'postgresql_embedded/bundled',
 ]
