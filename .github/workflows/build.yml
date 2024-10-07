@@ -28,7 +28,7 @@ jobs:
         shell: powershell
         run: |
           vcpkg integrate install
-          vcpkg install openssl:x64-windows
+          vcpkg install openssl:x64-windows-static-md
       - uses: actions/checkout@v4
       - name: Install Node.js
         uses: actions/setup-node@v4
